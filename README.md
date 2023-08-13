@@ -1,6 +1,6 @@
 ﻿# covid-19-stats-project
 
-# Screenshots
+<h3>Screenshots:</h3>
 
   <img src="/src/img/screen1.png" >
   <img src="/src/img/screen2.png" >
