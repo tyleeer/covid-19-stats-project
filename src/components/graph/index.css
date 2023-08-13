@@ -1,0 +1,48 @@
+.main-container {
+    background: #444e80;
+    color: #abafc6;
+    border-radius: 5px;
+    padding: 20px;
+}
+
+.graph-container {
+    position: relative;
+}
+
+.percent {
+    display: block;
+    width: 120px;
+    height: 120px;
+}
+
+.circle {
+    stroke: #915db1;
+    fill: none;
+    stroke-width: 3;
+}
+
+.circle:nth-child(2) {
+    stroke: #e59f3c;
+}
+
+.circle:nth-child(3) {
+    stroke: #5397d6;
+}
+
+.graph-container p {
+    position: absolute;
+    top: 58%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 12px;
+    color: #fff;
+    text-align: center;
+}
+
+.info p {
+    margin-bottom: 10px;
+}
+
+span {
+    color: #fff;
+}
