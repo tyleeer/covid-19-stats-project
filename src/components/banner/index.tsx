@@ -1,12 +1,18 @@
 import { ImHome } from "react-icons/im";
 
 const Banner = () => {
-  function navmoblie() {
+  function navMoblie() {
+    const navSwitch = document.getElementById(
+      "nav__switch"
+    ) as HTMLInputElement;
     const nav = document.getElementById("nav__mobile");
-    nav?.classList.contains("translate-x-[100dvw]");
+
     if (nav?.classList.contains("translate-x-[100dvw]")) {
       nav?.classList.remove("translate-x-[100dvw]");
-    } else nav?.classList.add("translate-x-[100dvw]");
+    } else {
+      nav?.classList.add("translate-x-[100dvw]");
+      navSwitch.checked = false;
+    }
   }
   function toTop() {
     const page = document.getElementById("main__container");
@@ -34,7 +40,11 @@ const Banner = () => {
         </button>
         <button className="py-2 px-4">
           <label className="relative swap swap-rotate text-white hover:text-[rgb(0,146,136)]">
-            <input type="checkbox" onClick={() => navmoblie()} />
+            <input
+              id="nav__switch"
+              type="checkbox"
+              onClick={() => navMoblie()}
+            />
             <svg
               className="swap-off fill-current"
               xmlns="http://www.w3.org/2000/svg"
@@ -61,7 +71,7 @@ const Banner = () => {
         >
           <button
             onClick={() => {
-              navmoblie(), toTop();
+              navMoblie(), toTop();
             }}
             className="px-4 hover:border-b-2 hover:border-[rgb(0,146,136)] hover:text-[rgb(0,146,136)]"
           >
@@ -69,7 +79,7 @@ const Banner = () => {
           </button>
           <button
             onClick={() => {
-              navmoblie(), toOverview();
+              navMoblie(), toOverview();
             }}
             className="px-4 hover:border-b-2 hover:border-[rgb(0,146,136)] hover:text-[rgb(0,146,136)]"
           >
@@ -77,7 +87,7 @@ const Banner = () => {
           </button>
           <button
             onClick={() => {
-              navmoblie(), toGraph();
+              navMoblie(), toGraph();
             }}
             className="px-4 hover:border-b-2 hover:border-[rgb(0,146,136)] hover:text-[rgb(0,146,136)]"
           >
@@ -85,7 +95,7 @@ const Banner = () => {
           </button>
           <button
             onClick={() => {
-              navmoblie(), toRecord();
+              navMoblie(), toRecord();
             }}
             className="px-4 hover:border-b-2 hover:border-[rgb(0,146,136)] hover:text-[rgb(0,146,136)]"
           >
@@ -93,11 +103,11 @@ const Banner = () => {
           </button>
         </div>
       </section>
-      <section className="w-full py-4 hidden lg:flex items-center justify-between bg-[rgb(16,15,15)]">
-        <button onClick={() => toTop()} className="px-4">
-          <ImHome className="w-[60px] h-[60px] text-white hover:text-[rgb(0,146,136)]" />
+      <section className="w-full px-20 py-4 hidden lg:flex items-center justify-between bg-[rgb(16,15,15)]">
+        <button onClick={() => toTop()}>
+          <ImHome className="w-[50px] h-[50px] text-white hover:text-[rgb(0,146,136)]" />
         </button>
-        <div className="flex items-center text-white text-[2rem]">
+        <div className="flex items-center text-white text-[1.5rem]">
           <button
             onClick={() => toTop()}
             className="px-4 hover:underline hover:underline-offset-2 hover:text-[rgb(0,146,136)]"

@@ -13,7 +13,7 @@ const Table = () => {
           loading.....
         </div>
       ) : (
-        <div className="w-full lg:w-[90%] m-auto mb-[5%] overflow-x-scroll">
+        <div className="w-full lg:w-[95%] m-auto mb-[5%] bg-black overflow-x-scroll">
           {filterType === "cases" ? (
             <table className="text-white relative border-separate border-spacing-x-2">
               <thead>
@@ -31,7 +31,7 @@ const Table = () => {
                       return (
                         <tr
                           key={index}
-                          className="odd:bg-[rgb(147,250,243)] odd:text-black"
+                          className="odd:bg-cyan-200 odd:text-black"
                         >
                           <td className="font-semibold sticky left-0 bg-black text-white">
                             {item ? item.country : null}
@@ -79,7 +79,7 @@ const Table = () => {
                       return (
                         <tr
                           key={index}
-                          className="odd:bg-[rgb(147,250,243)] odd:text-black"
+                          className="odd:bg-cyan-200 odd:text-black"
                         >
                           <td className="font-semibold sticky left-0 bg-black text-white">
                             {item ? item.country : null}
@@ -127,7 +127,7 @@ const Table = () => {
                       return (
                         <tr
                           key={index}
-                          className="odd:bg-[rgb(147,250,243)] odd:text-black"
+                          className="odd:bg-cyan-200 odd:text-black"
                         >
                           <td className="font-semibold sticky left-0 bg-black text-white">
                             {item ? item.country : null}

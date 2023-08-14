@@ -1,5 +1,4 @@
 .main-container {
-    background: #444e80;
     color: #abafc6;
     border-radius: 5px;
     padding: 20px;
@@ -16,7 +15,7 @@
 }
 
 .circle {
-    stroke: #915db1;
+    stroke: #155E75;
     fill: none;
     stroke-width: 3;
 }
