@@ -31,7 +31,7 @@ const Table = () => {
                       return (
                         <tr
                           key={index}
-                          className="odd:bg-[rgb(146,159,226)] odd:text-black"
+                          className="odd:bg-[rgb(147,250,243)] odd:text-black"
                         >
                           <td className="font-semibold sticky left-0 bg-black text-white">
                             {item ? item.country : null}
@@ -79,7 +79,7 @@ const Table = () => {
                       return (
                         <tr
                           key={index}
-                          className="odd:bg-[rgb(146,159,226)] odd:text-black"
+                          className="odd:bg-[rgb(147,250,243)] odd:text-black"
                         >
                           <td className="font-semibold sticky left-0 bg-black text-white">
                             {item ? item.country : null}
@@ -127,7 +127,7 @@ const Table = () => {
                       return (
                         <tr
                           key={index}
-                          className="odd:bg-[rgb(146,159,226)] odd:text-black"
+                          className="odd:bg-[rgb(147,250,243)] odd:text-black"
                         >
                           <td className="font-semibold sticky left-0 bg-black text-white">
                             {item ? item.country : null}

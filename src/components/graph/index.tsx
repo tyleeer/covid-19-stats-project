@@ -102,7 +102,7 @@ const Graph = () => {
               </p>
             </div>
             <div className="info">
-              <span className="font-semibold">COVID-19 patients</span>
+              <span className="font-semibold">Global COVID-19 Cases</span>
               <p className="flex gap-1">
                 <>total:</>
                 <span>

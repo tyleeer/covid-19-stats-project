@@ -4,7 +4,10 @@ import { monthList } from "@/utils";
 const Searchbar = () => {
   const { fieldMonth, fieldText, fieldType, fieldYear } = useSearchBar();
   return (
-    <section className="w-full lg:w-[90%] px-2 grid grid-cols-2 gap-2 p-2 lg:flex lg:justify-between lg:items-center bg-[rgb(68,78,128)] text-white font-semibold m-auto rounded-t-xl">
+    <section
+      
+      className="w-full lg:w-[90%] px-2 grid grid-cols-2 gap-2 p-2 lg:flex lg:justify-between lg:items-center bg-[rgb(0,145,136)] text-white font-semibold m-auto rounded-t-xl"
+    >
       <div className="lg:w-[20%] flex justify-end">
         <label htmlFor="year" className="">
           year: 20
@@ -12,7 +15,7 @@ const Searchbar = () => {
         <select
           {...fieldYear}
           id="year"
-          className="text-black bg-white border-2 border-[rgb(132,151,243)] rounded-xl"
+          className="text-black bg-white border-2 border-[rgb(147,250,243)] rounded-xl"
         >
           <option>23</option>
           <option>22</option>
@@ -27,7 +30,7 @@ const Searchbar = () => {
         <select
           {...fieldMonth}
           id="month"
-          className="border-2 border-[rgb(132,151,243)] text-black lg:w-[100px] rounded-xl bg-white px-1"
+          className="border-2 border-[rgb(147,250,243)] text-black lg:w-[100px] rounded-xl bg-white px-1"
         >
           {monthList.map((item, index) => {
             return <option key={index}>{item}</option>;
@@ -41,7 +44,7 @@ const Searchbar = () => {
         <select
           {...fieldType}
           id="type"
-          className="border-2 border-[rgb(132,151,243)] text-black lg:w-[100px] rounded-xl bg-white px-2"
+          className="border-2 border-[rgb(147,250,243)] text-black lg:w-[100px] rounded-xl bg-white px-2"
         >
           <option className="">cases</option>
           <option className="">deaths</option>
@@ -55,7 +58,7 @@ const Searchbar = () => {
         <input
           {...fieldText}
           type="text"
-          className="border-2 border-[rgb(132,151,243)] text-black rounded-xl bg-white px-2 w-full max-w-[200px]"
+          className="border-2 border-[rgb(147,250,243)] text-black rounded-xl bg-white px-2 w-full max-w-[200px]"
         ></input>
       </div>
     </section>
