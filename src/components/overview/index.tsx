@@ -46,9 +46,7 @@ const Overview = () => {
             <p>Last updated:</p>
             <p>
               {fetchToday.data &&
-                new Date(fetchToday.data?.updated)
-                  .toLocaleString()
-                  .replace(" ", ", ")}
+                new Date(fetchToday.data?.updated).toLocaleString()}
             </p>
           </div>
           <div className="flex w-full ml-[10%] lg:ml-0 items-center lg:items-start gap-2 lg:flex-col">
