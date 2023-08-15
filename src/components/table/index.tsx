@@ -1,3 +1,4 @@
+import { Cases, Deaths, Recovered } from "@/interfaces";
 import { useHistoricalDataStore } from "@/storages/historicalDataStore";
 import { getDate } from "@/utils";
 
@@ -37,15 +38,20 @@ const Table = () => {
                             {item ? item.country : null}
                           </td>
                           {dateList.map((i, index) => {
+                            const key: string = i;
                             return (
                               <td
                                 key={index}
                                 className="w-full text-center text-[0.8rem]"
                               >
                                 {item
-                                  ? item.timeline.cases[i] !== undefined
+                                  ? item.timeline.cases[
+                                      key as keyof Cases[]
+                                    ] !== undefined
                                     ? Number(
-                                        item.timeline.cases[i]
+                                        item.timeline.cases[
+                                          key as keyof Cases[]
+                                        ]
                                       ).toLocaleString()
                                     : "no data"
                                   : null}
@@ -85,15 +91,16 @@ const Table = () => {
                             {item ? item.country : null}
                           </td>
                           {dateList.map((i, index) => {
+                            const key: string = i;
                             return (
                               <td
                                 key={index}
                                 className="w-full text-center text-[0.8rem]"
                               >
                                 {item
-                                  ? item.timeline.deaths[i] !== undefined
+                                  ? item.timeline.deaths[key as keyof Deaths[]] !== undefined
                                     ? Number(
-                                        item.timeline.deaths[i]
+                                        item.timeline.deaths[key as keyof Deaths[]]
                                       ).toLocaleString()
                                     : "no data"
                                   : null}
@@ -133,15 +140,16 @@ const Table = () => {
                             {item ? item.country : null}
                           </td>
                           {dateList.map((i, index) => {
+                            const key: string = i;
                             return (
                               <td
                                 key={index}
                                 className="w-full text-center text-[0.8rem]"
                               >
                                 {item
-                                  ? item.timeline.recovered[i] !== undefined
+                                  ? item.timeline.recovered[key as keyof Recovered[]] !== undefined
                                     ? Number(
-                                        item.timeline.recovered[i]
+                                        item.timeline.recovered[key as keyof Recovered[]]
                                       ).toLocaleString()
                                     : "no data"
                                   : null}
