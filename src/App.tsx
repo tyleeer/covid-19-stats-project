@@ -29,7 +29,7 @@ function App() {
       {show && (
         <button
           onClick={() => toTop()}
-          className="fixed bottom-2 right-4 bg-white border border-cyan-900 rounded-full hover:animate-none animate-bounce z-40"
+          className="fixed bottom-2 right-4 bg-white border border-cyan-900 rounded-full hover:animate-none animate-bounce z-10"
         >
           <BsFillArrowUpCircleFill className="w-[35px] h-[35px] text-cyan-900" />
         </button>
