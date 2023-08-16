@@ -13,7 +13,7 @@ const Searchbar = () => {
         <select
           {...fieldSort}
           id="sort"
-          className="text-black min-w-[120px] lg:min-w-0 text-center bg-white border-2 rounded-xl"
+          className="text-black w-[120px] min-w-0 text-center bg-white border-2 rounded-xl"
         >
           <option>A-Z</option>
           <option>Z-A</option>
@@ -24,7 +24,7 @@ const Searchbar = () => {
         <select
           {...fieldYear}
           id="year"
-          className="text-black min-w-[85px] text-center bg-white border-2 rounded-xl"
+          className="text-black min-w-[110px] text-center bg-white border-2 rounded-xl"
         >
           <option>23</option>
           <option>22</option>
@@ -45,11 +45,11 @@ const Searchbar = () => {
         </select>
       </div>
       <div className="w-full lg:w-[20%] flex gap-1">
-        <label htmlFor="type">type:</label>
+        <label htmlFor="type">category:</label>
         <select
           {...fieldType}
           id="type"
-          className="border-2 text-black text-center lg:w-[100px] rounded-xl bg-white px-2"
+          className="border-2 text-black text-center w-[100px] rounded-xl bg-white px-2"
         >
           <option className="">cases</option>
           <option className="">deaths</option>
@@ -57,7 +57,7 @@ const Searchbar = () => {
         </select>
       </div>
       <div className="w-full lg:w-[25%] flex justify-center lg:justify-start gap-1 col-span-2 lg:col-span-1">
-        <label htmlFor="type">seacrh:</label>
+        <label htmlFor="type">search:</label>
         <input
           {...fieldText}
           type="text"

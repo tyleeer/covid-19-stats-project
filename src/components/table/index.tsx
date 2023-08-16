@@ -34,7 +34,7 @@ const Table = () => {
                           key={index}
                           className="odd:bg-cyan-200 odd:text-black"
                         >
-                          <td className="font-semibold h-full sticky left-0 bg-black text-white">
+                          <td className="font-semibold w-full h-[30px] sticky left-0 bg-black text-white">
                             {item ? item.country : null}
                           </td>
                           {dateList.map((i, index) => {
@@ -87,7 +87,7 @@ const Table = () => {
                           key={index}
                           className="odd:bg-cyan-200 odd:text-black"
                         >
-                          <td className="font-semibold sticky left-0 bg-black text-white">
+                          <td className="w-full h-[30px] font-semibold sticky left-0 bg-black text-white">
                             {item ? item.country : null}
                           </td>
                           {dateList.map((i, index) => {
@@ -140,7 +140,7 @@ const Table = () => {
                           key={index}
                           className="odd:bg-cyan-200 odd:text-black"
                         >
-                          <td className="font-semibold sticky left-0 bg-black text-white">
+                          <td className="w-full h-[30px] font-semibold sticky left-0 bg-black text-white">
                             {item ? item.country : null}
                           </td>
                           {dateList.map((i, index) => {
