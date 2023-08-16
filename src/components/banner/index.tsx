@@ -1,7 +1,7 @@
 import { ImHome } from "react-icons/im";
 
 const Banner = () => {
-  function navMoblie() {
+  function navMoblieHandler() {
     const navSwitch = document.getElementById(
       "nav__switch"
     ) as HTMLInputElement;
@@ -14,36 +14,32 @@ const Banner = () => {
       navSwitch.checked = false;
     }
   }
+
   function toTop() {
     const page = document.getElementById("main__container");
     page?.scrollTo(0, 0);
   }
-  function toOverview() {
-    const overview = document.getElementById(
-      "overview__container"
-    ) as HTMLElement;
-    overview?.scrollIntoView();
+
+  function toView(id: string) {
+    const section = document.getElementById(id);
+    section?.scrollIntoView();
   }
-  function toGraph() {
-    const graph = document.getElementById("graph__container");
-    graph?.scrollIntoView();
-  }
-  function toRecord() {
-    const record = document.getElementById("record__container");
-    record?.scrollIntoView();
-  }
+
   return (
     <>
-      <section className="lg:hidden w-full py-4 flex items-center justify-between bg-[rgb(16,15,15)]">
+      <section
+        id="nav__mobile--banner"
+        className="lg:hidden w-full flex items-center justify-between bg-[rgb(16,15,15)] transition-all ease-in"
+      >
         <button onClick={() => toTop()} className="px-4">
-          <ImHome className="w-[60px] h-[60px] text-white hover:text-[rgb(0,146,136)]" />
+          <ImHome className="w-[40px] h-[40px] text-white hover:text-[rgb(0,146,136)]" />
         </button>
         <button className="py-2 px-4">
           <label className="relative swap swap-rotate text-white hover:text-[rgb(0,146,136)]">
             <input
               id="nav__switch"
               type="checkbox"
-              onClick={() => navMoblie()}
+              onClick={() => navMoblieHandler()}
             />
             <svg
               className="swap-off fill-current"
@@ -71,7 +67,7 @@ const Banner = () => {
         >
           <button
             onClick={() => {
-              navMoblie(), toTop();
+              navMoblieHandler(), toTop();
             }}
             className="px-4 hover:border-b-2 hover:border-[rgb(0,146,136)] hover:text-[rgb(0,146,136)]"
           >
@@ -79,7 +75,7 @@ const Banner = () => {
           </button>
           <button
             onClick={() => {
-              navMoblie(), toOverview();
+              navMoblieHandler(), toView("overview__container");
             }}
             className="px-4 hover:border-b-2 hover:border-[rgb(0,146,136)] hover:text-[rgb(0,146,136)]"
           >
@@ -87,7 +83,7 @@ const Banner = () => {
           </button>
           <button
             onClick={() => {
-              navMoblie(), toGraph();
+              navMoblieHandler(), toView("graph__container");
             }}
             className="px-4 hover:border-b-2 hover:border-[rgb(0,146,136)] hover:text-[rgb(0,146,136)]"
           >
@@ -95,7 +91,7 @@ const Banner = () => {
           </button>
           <button
             onClick={() => {
-              navMoblie(), toRecord();
+              navMoblieHandler(), toView("record__container");
             }}
             className="px-4 hover:border-b-2 hover:border-[rgb(0,146,136)] hover:text-[rgb(0,146,136)]"
           >
@@ -103,9 +99,12 @@ const Banner = () => {
           </button>
         </div>
       </section>
-      <section className="w-full px-20 py-4 hidden lg:flex items-center justify-between bg-[rgb(16,15,15)]">
+      <section
+        id="nav__desktop"
+        className="w-full px-20 py-4 hidden lg:flex items-center justify-between bg-[rgb(16,15,15)] transition-all ease-in"
+      >
         <button onClick={() => toTop()}>
-          <ImHome className="w-[50px] h-[50px] text-white hover:text-[rgb(0,146,136)]" />
+          <ImHome className="w-[40px] h-[40px] text-white hover:text-[rgb(0,146,136)]" />
         </button>
         <div className="flex items-center text-white text-[1.5rem]">
           <button
@@ -115,19 +114,19 @@ const Banner = () => {
             Home
           </button>
           <button
-            onClick={() => toOverview()}
+            onClick={() => toView("overview__container")}
             className="px-4 hover:underline hover:underline-offset-2 hover:text-[rgb(0,146,136)]"
           >
             Overview
           </button>
           <button
-            onClick={() => toGraph()}
+            onClick={() => toView("graph__container")}
             className="px-4 hover:underline hover:underline-offset-2 hover:text-[rgb(0,146,136)]"
           >
             Graphs
           </button>
           <button
-            onClick={() => toRecord()}
+            onClick={() => toView("record__container")}
             className="px-4 hover:underline hover:underline-offset-2 hover:text-[rgb(0,146,136)]"
           >
             Historical Record

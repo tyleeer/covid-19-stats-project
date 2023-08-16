@@ -18,6 +18,7 @@ export const useSearchBar = () => {
   const searchMonth = watch("searchMonth");
   const searchType = watch("searchType");
   const searchText = watch("searchText");
+  const searchSort = watch("searchSort");
 
   function monthToNum(month: string) {
     switch (month) {
@@ -50,12 +51,37 @@ export const useSearchBar = () => {
     }
   }
 
-  function filter(data: getHistory | undefined, month: number, text: string) {
+  function filter(
+    data: getHistory | undefined,
+    month: number,
+    text: string,
+    sort: string
+  ) {
     const filterText = data?.filter((item) =>
       item
         ? item.country.toLowerCase().includes((text || "").toLowerCase())
         : null
     );
+
+    function filtering() {
+      switch (sort) {
+        case "A-Z":
+         return filterText?.sort((a, b) =>
+           a.country > b.country ? 1 : b.country > a.country ? -1 : 0
+         );
+        case "Z-A":
+           return filterText?.sort((a, b) =>
+             a.country > b.country ? -1 : b.country > a.country ? 1 : 0
+           );
+
+        default:
+          return filterText?.sort((a, b) =>
+            a.country > b.country ? 1 : b.country > a.country ? -1 : 0
+          );
+      }
+    }
+
+    const filterSort = filtering();
 
     function checkMonth(item: eachHitory) {
       const casesList = item.timeline.cases;
@@ -67,7 +93,7 @@ export const useSearchBar = () => {
       }
     }
 
-    const filterMonth = filterText?.filter(checkMonth);
+    const filterMonth = filterSort?.filter(checkMonth);
 
     return filterMonth;
   }
@@ -82,7 +108,7 @@ export const useSearchBar = () => {
       setFetchHistory({ data: response.data, loading: false });
 
       const month = monthToNum(searchMonth);
-      const res = filter(response.data, month, searchText);
+      const res = filter(response.data, month, searchText, searchSort);
 
       setHistory({ data: res, loading: false });
     } else {
@@ -97,7 +123,7 @@ export const useSearchBar = () => {
   }, []);
 
   useEffect(() => {
-    const month = monthToNum(searchMonth); // correct
+    const month = monthToNum(searchMonth);
 
     setFilterType(searchType);
     setFilterMonth(month);
@@ -106,15 +132,16 @@ export const useSearchBar = () => {
 
   useEffect(() => {
     const month = monthToNum(searchMonth);
-    const response = filter(fetchHistory.data, month, searchText);
+    const response = filter(fetchHistory.data, month, searchText, searchSort);
 
     setHistory({ data: response, loading: false });
-  }, [searchMonth, searchText]);
+  }, [searchMonth, searchText, searchSort]);
 
   return {
     fieldYear: register("searchYear"),
     fieldMonth: register("searchMonth"),
     fieldType: register("searchType"),
     fieldText: register("searchText"),
+    fieldSort: register("searchSort"),
   };
 };

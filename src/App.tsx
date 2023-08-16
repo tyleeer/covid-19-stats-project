@@ -8,6 +8,7 @@ import { useState } from "react";
 
 function App() {
   const [show, setShow] = useState(false);
+  let scrollDetector = 0;
 
   function toTop() {
     const main = document.getElementById("main__container") as HTMLElement;
@@ -18,6 +19,38 @@ function App() {
     const main = document.getElementById("main__container") as HTMLElement;
     const triggerHeight = (main.scrollHeight - main.clientHeight) * 0.05;
     main.scrollTop > triggerHeight ? setShow(true) : setShow(false);
+
+    const navDesktop = document.getElementById("nav__desktop") as HTMLElement;
+    const navMobile = document.getElementById(
+      "nav__mobile--banner"
+    ) as HTMLElement;
+
+    //Desktop Banner
+    if (main.scrollTop > navDesktop.offsetHeight) {
+      if (main.scrollTop > scrollDetector) {
+        navDesktop.classList.add("-translate-y-[200%]");
+      } else if (main.scrollTop < scrollDetector) {
+        navDesktop.classList.remove("-translate-y-[200%]");
+      }
+    } else {
+      if (navDesktop.classList.contains("-translate-y-[200%]")) {
+        navDesktop.classList.remove("-translate-y-[200%]");
+      }
+    }
+
+    //Mobile Banner
+    if (main.scrollTop > navMobile.offsetHeight) {
+      if (main.scrollTop > scrollDetector) {
+        navMobile.classList.add("-translate-y-[200%]");
+      } else if (main.scrollTop < scrollDetector) {
+        navMobile.classList.remove("-translate-y-[200%]");
+      }
+    } else {
+      if (navMobile.classList.contains("-translate-y-[200%]")) {
+        navMobile.classList.remove("-translate-y-[200%]");
+      }
+    }
+    scrollDetector = main.scrollTop;
   }
 
   return (
@@ -34,7 +67,7 @@ function App() {
           <BsFillArrowUpCircleFill className="w-[35px] h-[35px] text-cyan-900" />
         </button>
       )}
-      <section className="w-full h-[10%] sticky top-0 z-10">
+      <section className="w-full sticky top-0 z-10">
         <Banner />
       </section>
       <section id="overview__container" className="w-full">

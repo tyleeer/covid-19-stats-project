@@ -34,7 +34,7 @@ const Table = () => {
                           key={index}
                           className="odd:bg-cyan-200 odd:text-black"
                         >
-                          <td className="font-semibold sticky left-0 bg-black text-white">
+                          <td className="font-semibold h-full sticky left-0 bg-black text-white">
                             {item ? item.country : null}
                           </td>
                           {dateList.map((i, index) => {
@@ -98,9 +98,13 @@ const Table = () => {
                                 className="w-full text-center text-[0.8rem]"
                               >
                                 {item
-                                  ? item.timeline.deaths[key as keyof Deaths[]] !== undefined
+                                  ? item.timeline.deaths[
+                                      key as keyof Deaths[]
+                                    ] !== undefined
                                     ? Number(
-                                        item.timeline.deaths[key as keyof Deaths[]]
+                                        item.timeline.deaths[
+                                          key as keyof Deaths[]
+                                        ]
                                       ).toLocaleString()
                                     : "no data"
                                   : null}
@@ -147,9 +151,13 @@ const Table = () => {
                                 className="w-full text-center text-[0.8rem]"
                               >
                                 {item
-                                  ? item.timeline.recovered[key as keyof Recovered[]] !== undefined
+                                  ? item.timeline.recovered[
+                                      key as keyof Recovered[]
+                                    ] !== undefined
                                     ? Number(
-                                        item.timeline.recovered[key as keyof Recovered[]]
+                                        item.timeline.recovered[
+                                          key as keyof Recovered[]
+                                        ]
                                       ).toLocaleString()
                                     : "no data"
                                   : null}

@@ -2,6 +2,7 @@ import { useCurrentDataStore } from "@/storages/currentDataStore";
 import "./index.css";
 import { useEffect } from "react";
 import { currentDataServic } from "@/services";
+import ReactLoading from "react-loading";
 
 const Graph = () => {
   const {
@@ -636,8 +637,8 @@ const Graph = () => {
           </div>
         </>
       ) : (
-        <div className="w-full text-white text-center text-[2rem]">
-          Loading...
+        <div className="w-full flex justify-center">
+          <ReactLoading type="bars" color="#155E75" height={100} width={100} />
         </div>
       )}
     </div>
