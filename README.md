@@ -1,6 +1,6 @@
 ﻿# covid-19-stats-project
 
-<h4>👉Demo: <a href="https://covid-19-stats-project-qnel-52rsyeuwe-tyleeer.vercel.app/">Covid-19-Stats-Project</a></h4>
+<h4>👉Demo: <a href="https://covid-19-stats-project-qnel.vercel.app/">Covid-19-Stats-Project</a></h4>
 
 <h3>Screenshots:</h3>
 
